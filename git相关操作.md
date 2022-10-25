@@ -66,3 +66,5 @@ git reflog
 **解析：**
 
 git log：查看存档，查看commit 日志
+
+git reset --hard HEAD^:选择存档，要有参照物，HEAD表示当前存档，^表示上一个存档，^^表示上上个存档，HEAD~100表示前100个存档。
