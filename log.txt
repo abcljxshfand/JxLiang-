@@ -1,0 +1,41 @@
+commit 4beefb12f7eaa36800b285cad712d43fc8ebd62e
+Author: ljx <285988424@qq.com>
+Date:   Tue Oct 25 20:33:49 2022 +0800
+
+    learn how to read log
+
+commit f1797413fc0533a0243db2969884edade843d32a
+Author: ljx <285988424@qq.com>
+Date:   Tue Oct 25 20:31:13 2022 +0800
+
+    learn how to reset branch
+
+commit 6c42cadaa9410d7885641008f5e5b7bd96d45eda
+Author: ljx <285988424@qq.com>
+Date:   Tue Oct 25 20:26:57 2022 +0800
+
+    learn branch
+
+commit 01aafc1a142919ad0253dab160d551c45fa855dd
+Author: ljx <285988424@qq.com>
+Date:   Tue Oct 25 20:05:23 2022 +0800
+
+    随便写点东西在README上
+
+commit fba2efd95988afe35ca1d44f8b132de069f9ca37
+Author: ljx <285988424@qq.com>
+Date:   Tue Oct 25 18:06:14 2022 +0800
+
+    git的操作
+
+commit 5a83323acb1dfefabe94a938691640a8157b8f47
+Author: ljx <285988424@qq.com>
+Date:   Tue Oct 25 15:50:19 2022 +0800
+
+    所有笔记上传
+
+commit f2733f04dbecc8a4c0e67434938a45c87c683c9b
+Author: ljx <285988424@qq.com>
+Date:   Tue Oct 25 15:38:17 2022 +0800
+
+    first commit
