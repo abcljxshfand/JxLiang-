@@ -485,7 +485,7 @@ print('=' * 80)
 for x_train,y_lable in train_ds :
     print(x_train,y_lable)
     
-for i, data in enumerate(train_loader, 1):  # 注意enumerate返回值有两个,一个是序号，一个是数据（包含训练数据和标签）
+for i, data in enumerate(train_dl, 1):  # 注意enumerate返回值有两个,一个是序号，一个是数据（包含训练数据和标签）
     x_data, label = data
     print(' batch:{0} x_data:{1}  label: {2}'.format(i, x_data, label))    
 ```
