@@ -1,5 +1,15 @@
 # Reid_ide笔记
 
+## 打断点
+
+### IPython模块中的embed()
+
+打断点，进入Ipython交互界面。
+
+### pycharm红点
+
+设置好断点，debug运行到该行代码，然后 F8 单步调试，遇到想进入的函数 F7 进去，想出来在 shift + F8，跳过不想看的地方，直接设置下一个断点，然后 F9 过去。
+
 ## data_manager.py
 
 ### Market1501类
