@@ -12,6 +12,10 @@
 
 如何称之为有**判别性**的**特征**？作者利用编码器的思想，对于同一ID的图形的特征，如果编码后仍可以较好的解码为同一ID的特征，那么我们就说这个特征有判别力。这里有个点值得注意：编码器是针对**图像特征**，非图像本身。**好的特征表示大概有2个衡量标准：可以很好的重构出输入数据、对输入数据一定程度下的扰动具有不变性。**
 
+
+
+### 为什么要用单流网络
+
 ## 摘要
 
 **介绍传统的行人重识别（单模态、适用场景）：**目前大多数Re-ID都是基于 RGB 图像。但是有时RGB 图像并不适用，例如在黑暗的环境或夜间。
@@ -46,6 +50,12 @@
 ![img](https://img-blog.csdnimg.cn/20201030141229347.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlbnJvdWRlYmFvemk=,size_16,color_FFFFFF,t_70#pic_center)
 
 上图为论文评估中的四个网络结构。转换块的结构取决于基础网络。转换块和FC层的颜色指示是否共享参数。红色和蓝色表示特定参数，绿色表示共享参数
+
+不同的网络结构，有不同的特点。
+
+在跨模态匹配问题中，我们的网络需要：1.提取模态间共享的特征。2.使用特征进行匹配
+
+根据功能，完善网络结构，分别是the domain-specific network和the shared network。domain-specific network的作用是可以提取不同域的共享特征。the shared network的作用是可以提取用于匹配的区分特征。
 
 #### 单流结构（One-stream Structure）
 
@@ -89,3 +99,41 @@ SYSU-MM01包含由6台相机拍摄的图像，包括2个红外相机和4个RGB�
 对于这两种模式，我们都采用单镜头和多镜头设置（single shot / multi shot）。对于RGB相机下的每个身份，我们随机选择该身份的1/10个图像，以形成用于单镜头/多镜头设置的图库集（gallery set）。对于探头组（probe set），使用所有图像。给定探测图像（probe），通过计算探测图像（probe image）和画廊图像（gallery image）之间的相似性来进行匹配。请注意，在不同位置的摄像机之间进行匹配（位置如表2所示）。摄像机2和摄像机3位于同一位置，因此摄像机3的探测图像（probe）跳过摄像机2的画廊图像（gallery）。计算相似度后，我们可以根据相似度的降序获得排名列表。
 
 这个数据集具有挑战性，因为一些人的图像是在室内环境中拍摄的，而有些是在室外环境中。它有491人，每个人至少被逮捕 两个不同的照相机。我们采用了单镜头全搜索模式评估协议，因为它是最具挑战性的情况。
+
+
+
+## 心得感悟
+
+本文首次提出跨模态行人重识别任务。作者提供了相关的数据集、网络结构、解决思路。
+
+不过以现在的视角来看待这篇文章，我感觉作者提出的**<font color='red'>深度零填充算法</font>**有些冗余。
+
+主要解决一个问题：如何提出共享特征。**<font color='red'>本文大量出现domain-specific的字眼</font>**，一开始让我晕头转向。
+
+于是我便开始思考，跨模态行人重识别，简单来说就是跨模态检索任务。本质上就是**多模态的检索问题**。
+
+关于多模态，我们需要关注的有：多模态的表示、转化、融合、对齐、协同学习
+
+而在这里，我们会把重心放在多模态的表示这一问题上：我想要提取出红外图像和可见光图像间共有的特征。
+
+一般而言，多模态表征学习，最直接的就是特征拼接。还有就是协同学习。
+
+所谓协同学习，每个模态xi、xn，都有相应的映射f（xi）、g（xn），这些映射能把它们投影到同一个空间中。
+
+问题是，如何学习这些映射？两种思路：**<font color='red'>相似度模型和结构化模型</font>**。度量学习很好理解，量化距离，拉近距离。结构化呢？
+
+![image-20221122172737401](C:\Users\admin\AppData\Roaming\Typora\typora-user-images\image-20221122172737401.png)
+
+有了解决思路了，那作者是是使用什么工具来解决问题的呢？有三种选择，单流网络、双流网络、非对称FC网络。通过分析思考，作者使用改进后的单流网络。这种单流网络相比于双流网络、非对称FC网络更加**<font color='red'>灵活</font>**，学习出更鲁棒的domain-specific structure。
+
+在该网络中，我们会存在三种类型的节点，分别是
+
+![image-20221122212222520](C:\Users\admin\AppData\Roaming\Typora\typora-user-images\image-20221122212222520.png)
+
+我们可以看到，domain2的数据如果输入到domain1-spcific结点，会输出零值。domain1数据输入domain2节点同理。这两种节点就是我们想要得到的domain-specific structure，能提取出共享的特征。
+
+我们为了得到更多更鲁棒的domain-specific strurcture，提出了deep zero padding算法。具体思路如下。
+
+![image-20221122213920352](C:\Users\admin\AppData\Roaming\Typora\typora-user-images\image-20221122213920352.png)
+
+![image-20221122213950411](C:\Users\admin\AppData\Roaming\Typora\typora-user-images\image-20221122213950411.png)
