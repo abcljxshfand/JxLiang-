@@ -1,6 +1,6 @@
 # Wang-2019-（CVPR）Learning to Reduce Dual-Level Discrepancy for Infrared-Visible Person Re-Identification
 
-**（注：**在论文中，黄色标记是关键词句，绿色标记是背景，红色标记是重点，紫色标记是相关工作，红色下划线是目的与意义。）
+**（注：**在论文中，黄色标记是读论文时候的main body，绿色标记是背景、名词解释，红色标记是重点，紫色标记是相关工作，蓝色是作用、目的与意义，棕色是疑问、问题。）
 
 ## 摘要
 

@@ -1,6 +1,6 @@
 # Ye - 2018 - （AAAI）Hierarchical Discriminative Learning for Visible Thermal Person Re-Identification
 
-**（注：**在论文中，黄色标记是关键词句，绿色标记是背景，红色标记是重点，紫色标记是相关工作，蓝色标记是作用，棕色是疑问点）
+**（注：**在论文中，黄色标记是读论文时候的main body，绿色标记是背景、名词解释，红色标记是重点，紫色标记是相关工作，蓝色是作用、目的与意义，棕色是疑问、问题。）
 
 ## 问题
 

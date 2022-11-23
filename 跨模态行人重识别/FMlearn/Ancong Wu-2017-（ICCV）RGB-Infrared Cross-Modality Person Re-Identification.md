@@ -1,5 +1,7 @@
 # Ancong Wu-2017-（ICCV）RGB-Infrared Cross-Modality Person Re-Identification
 
+**（注：**在论文中，黄色标记是读论文时候的main body，绿色标记是背景、名词解释，红色标记是重点，紫色标记是相关工作，蓝色是作用、目的与意义，棕色是疑问、问题。）
+
 ## 问题
 
 ### domain adaption
@@ -15,6 +17,8 @@
 
 
 ### 为什么要用单流网络
+
+
 
 ## 摘要
 
@@ -124,7 +128,7 @@ SYSU-MM01包含由6台相机拍摄的图像，包括2个红外相机和4个RGB�
 
 ![image-20221122172737401](C:\Users\admin\AppData\Roaming\Typora\typora-user-images\image-20221122172737401.png)
 
-有了解决思路了，那作者是是使用什么工具来解决问题的呢？有三种选择，单流网络、双流网络、非对称FC网络。通过分析思考，作者使用改进后的单流网络。这种单流网络相比于双流网络、非对称FC网络更加**<font color='red'>灵活</font>**，学习出更鲁棒的domain-specific structure。
+有了解决思路了，那作者是是使用什么工具来解决问题的呢？有三种选择，单流网络、双流网络、非对称FC网络。**<font color='red'>通过分析思考</font>**（How？），作者使用改进后的单流网络。这种单流网络相比于双流网络、非对称FC网络更加**<font color='red'>灵活</font>**，学习出更鲁棒的domain-specific structure。
 
 在该网络中，我们会存在三种类型的节点，分别是
 
