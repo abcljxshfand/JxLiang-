@@ -22,9 +22,15 @@
 
 ![image-20221124112633945](C:\Users\admin\AppData\Roaming\Typora\typora-user-images\image-20221124112633945.png)
 
+### 
+
+
+
 ### Feature projection
 
 ![image-20221124112735500](C:\Users\admin\AppData\Roaming\Typora\typora-user-images\image-20221124112735500.png)
+
+![image-20221125110511178](C:\Users\admin\AppData\Roaming\Typora\typora-user-images\image-20221125110511178.png)
 
 #### Exploring multi-level features
 
@@ -104,13 +110,13 @@ Liu等人[24]在其参数共享网络中提出了一种双粒度三重丢失模�
 
 **[37] Q. Wu, P. Dai, J. Chen, C.-W. Lin, Y. Wu, F. Huang, B. Zhong, R. Ji, Discover cross-modality nuances for visible-infrared person re-identification, in: Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, 2021, pp. 4330–4339.**
 
-具体而言，Wu等人[37]提出了一种新的联合模态和模式对齐网络（MPANet），该网络使用基于注意力机制的模式对齐模块来发现VI ReID的行人不同模式中的跨模态细微差别，从而提取更具区别性的特征。
+具体而言，Wu等人[37]提出**了一种新的联合模态和模式对齐网络（MPANet）**，该网络使用基于注意力机制的模式对齐模块来发现VI ReID的行人不同模式中的跨模态细微差别，从而提取更具区别性的特征。
 
 
 
 **Y. Wu, S. Wan, D. Wu, C. Wang, C. Yuan, X. Qin, H. Wu, X. Zhao, Position attention-guided learning for infrared-visible person re-identification, in: Proceedings of the International Conference on Intelligent Computing, 2020, pp. 387–397.**
 
-受自我注意机制[51]的启发，Wu等人[34]提出了一种位置注意力引导学习模块（PALM），以捕获不同人位置之间的长距离依赖性，以增强局部特征的可分辨性。
+受自我注意机制[51]的启发，Wu等人[34]提出了**一种位置注意力引导学习模块（PALM）**，以捕获不同人位置之间的长距离依赖性，以增强局部特征的可分辨性。
 
 
 
@@ -449,6 +455,8 @@ Zhang等人[68]提出了一种双对齐部分感知表示（DAPR）框架，以�
 Single-modality information compensation：<font color='red'>**总结：基于单模态信息补偿的模型通常生成一个缺失的模态特定信息，而不是所有信息。**</font>
 
 Cross-modality information compensation：<font color='red'>**总结：基于跨模态信息补偿的模型同时生成VI ReID的所有缺失模态特定信息。**</font>
+
+![image-20221125111617879](C:\Users\admin\AppData\Roaming\Typora\typora-user-images\image-20221125111617879.png)
 
 ### Single-modality information compensation
 

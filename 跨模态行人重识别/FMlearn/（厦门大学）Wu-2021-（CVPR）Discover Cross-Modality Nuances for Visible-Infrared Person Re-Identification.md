@@ -10,11 +10,11 @@
 
 ------
 
-![image-20221125213154814](C:\Users\admin\AppData\Roaming\Typora\typora-user-images\image-20221125213154814.png)
+
 
 ## 背景、目的与结论
 
-**背景：**
+### **背景**
 
 在跨模态行人重识别任务中，最关键的是要解决模态间的差异。
 
@@ -26,21 +26,23 @@
 
 
 
-**目的：**
+### **目的**
 
-设计一个模型，缓解模态间的差异，同时可以发现可见红外人物Re-ID的不同模式中的跨模态细微差别，提取出具有鉴别性的特征。
+设计一个模型
+
+1. 缓解模态间的差异
+2. 同时可以发现可见红外人物Re-ID的不同模式中的跨模态细微差别，提取出具有鉴别性的特征。
 
 
 
-**结论：**
+### **结论**
 
-提出了一种**联合模态和模式对齐网络（a joint Modality and Pattern Alignment Network，MPANet）**来发现可见红外人物Re-ID的不同模式中的跨模态细微差别，该网络引入了模态减轻模块和模式对齐模块来联合提取辨别特征。
+![image-20221125213154814](C:\Users\admin\AppData\Roaming\Typora\typora-user-images\image-20221125213154814.png)
 
-具体地，我们首先提出了一种**模态减轻模块（The Modality Alleviation Module，MAM）**，以从提取的特征图中去除模态信息。
-
-然后，我们设计了一个**模式对齐模块（the Pattern Alignment Module，PAM）**，它为一个人的不同模式生成多个模式图，以发现细微差别。
-
-最后，我们引入了**一种互均值学习方式（a mutual mean learning fashion ）**来缓解模态差异，并提出了一种**中心聚类损失（ the cross-entropy loss）**来指导**身份学习和细微差别发现（identity learning and nuances discovering）**。在公共SYSU-MM01和RegDB数据集上的大量实验表明MPANet优于现有技术。
+1. 提出了一种**联合模态和模式对齐网络（a joint Modality and Pattern Alignment Network，MPANet）**来发现可见红外人物Re-ID的不同模式中的跨模态细微差别，该网络引入了模态减轻模块和模式对齐模块来联合提取辨别特征。
+2. 具体地，我们首先提出了一种**模态减轻模块（The Modality Alleviation Module，MAM）**，以从提取的特征图中去除模态信息。
+3. 然后，我们设计了一个**模式对齐模块（the Pattern Alignment Module，PAM）**，它为一个人的不同模式生成多个模式图，以发现细微差别。
+4. 最后，我们引入了**一种互均值学习方式（a mutual mean learning fashion ）**来缓解模态差异，并提出了一种**中心聚类损失（ the cross-entropy loss）**来指导**身份学习和细微差别发现（identity learning and nuances discovering）**。在公共SYSU-MM01和RegDB数据集上的大量实验表明MPANet优于现有技术。
 
 ## 结果与讨论
 
@@ -54,8 +56,8 @@
 
 **主要贡献：**
 
-1. 我们在统一的框架中解决了可见红外人员Re-ID的细微差别发现和模态差异。文献中没有对前者进行探讨，而后者是跨模式匹配人的关键。
-2. 为了发现细微差别并提取辨别特征，提出了模式对齐模块（PAM），以无监督的方式发现不同模式中的细微差别，并提出了中心聚类损失和分离损失。
-3. 为了在保持身份信息的同时缓解模态差异，提出了模态缓解模块（MAM），该模块在相互平均学习方式的指导下选择性地应用实例归一化。
+1. 我们在统一的框架中**<font color='red'>解决了可见红外人员Re-ID的细微差别发现和模态差异</font>**。文献中没有对前者进行探讨，而后者是跨模式匹配人的关键。
+2. 为了发现细微差别并提取辨别特征，提出了**模式对齐模块（PAM）**，以无监督的方式发现不同模式中的细微差别，并提出了中心聚类损失和分离损失。
+3. 为了在保持身份信息的同时缓解模态差异，提出了**模态缓解模块（MAM）**，该模块在相互平均学习方式的指导下选择性地应用实例归一化。
 
 ## 自我想法
