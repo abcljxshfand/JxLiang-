@@ -53,3 +53,9 @@
 ## 自我思考
 
 看不懂
+
+### 思路与问题
+
+问题：
+
+1.如何理解”模态内和模态间特征匹配的**相关性建模（affinities modeling for intra- and inter-modality feature matching）**“

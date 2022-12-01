@@ -65,6 +65,8 @@ Wu等人[18]首先提供了名为SYSUMM01的跨模态PReID数据集，并针对�
 
 ## 自我思考
 
+### 思路与问题
+
 新瓶装旧酒，用了别人的方法来解决一个特定的问题（单模态的行人重识别中提取局部信息）。
 
 比如说：
@@ -88,3 +90,13 @@ Wu等人[18]首先提供了名为SYSUMM01的跨模态PReID数据集，并针对�
   Wang等人[29]提出了一种基于条带的模型，称为多粒度网络（MGN），该模型将输入图像划分为多个条带，用于以多粒度的方式提取有区别的局部特征表示。
 
   Wang et al [29] proposed a stripe-based model called Multiple Granularities Network (MGN), which divided the input image into multiple stripes for extracting discriminative local feature representations in multiple granularities manner.
+
+
+
+问题
+
+什么是注意力机制？与局部特征表示学习有什么关系？
+
+
+
+注意力机制的作用是什么？对于学习图像中的位置关系有什么作用？文中提到了”位置注意力引导学习模块（PALM），**<font color='red'>以捕获长程依赖性</font>**并增强异质模态的辨别性局部特征表示“，这里长距离依赖
