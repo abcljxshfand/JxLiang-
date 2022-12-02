@@ -56,7 +56,7 @@
 
 ![image-20221124112633945](C:\Users\admin\AppData\Roaming\Typora\typora-user-images\image-20221124112633945.png)
 
-### 
+
 
 
 
@@ -91,6 +91,10 @@ Liu等人[16]提出在他们的共享网络中**使用一些跳过连接**来探
 
 
 #### Mining global and local information
+
+挖掘全局和局部信息可以使VI-ReID模型对未对准具有鲁棒性。（**Mining** global and local information can make VI-ReID models robust against misalignment.）
+
+因此，许多研究人员致力于如何通过专用参数共享网络来有效地挖掘共享特征空间中的两种类型的信息。
 
 22  21 23 28 <font color='red'>**总结：一些工作侧重于提取有区别的零件特征**</font>：
 

@@ -57,7 +57,17 @@
 
 **列举2020年前具有代表性的文献，简单梳理了跨模态行人重识别任务的发展。提出了一个研究思路：关注局部信息（包含更细粒度和区分性的特征）、使用注意力机制**
 
-Wu等人[18]首先提供了名为SYSUMM01的跨模态PReID数据集，并针对跨模态检索问题提出了深度零填充架构。[19]提出的称为cmGAN的GAN模型，包含一个生成器和一个鉴别器。cmGAN中生成器的目的是提取两种模态的特征，然后将提取的特征馈送到鉴别器以区分输入模态。Ye等人[23]提出了一种称为TONE的深度双蒸汽CNN架构。通过联合监督交叉熵损失和对比损失来训练TONE模型，以减少交叉模态变化。基于用分层度量学习训练的TONE模型，Ye等人[24]提出了一种用双约束顶级（DCTR）损失训练的双路径端到端深度模型，以学习最终的区分特征表示。[25]提出的一种双水平差异减少学习（D2RL）方法，分别处理模态和外观差异。该模型首先通过图像级别转换统一图像表示。然后通过特征级双路径网络减少外观差异。
+Wu等人[18]首先提供了名为SYSUMM01的跨模态PReID数据集，并针对跨模态检索问题提出了深度零填充架构。[19]提出的称为cmGAN的GAN模型，包含一个生成器和一个鉴别器。cmGAN中生成器的目的是提取两种模态的特征，然后将提取的特征馈送到鉴别器以区分输入模态。
+
+Ye等人[23]提出了一种称为TONE的深度双蒸汽CNN架构。通过联合监督交叉熵损失和对比损失来训练TONE模型，以减少交叉模态变化。基于用分层度量学习训练的TONE模型，
+
+23. Ye, M., Lan, X., Li, J.: Hierarchical discriminative learning for visible thermal person re identification. In: Thirty Second AAAI Conference on Artificial Intelligence (2018)
+
+Ye等人[24]提出了一种用双约束顶级（DCTR）损失训练的双路径端到端深度模型，以学习最终的区分特征表示。
+
+\24. Ye, M., Wang, Z., Lan, X., Yuen, P.C.: Visible thermal person re-identification via dualconstrained top-ranking. In: Proceedings of International Joint Conference on Artificial Intelligence, pp. 1092–1099 (2018)
+
+[25]提出的一种双水平差异减少学习（D2RL）方法，分别处理模态和外观差异。该模型首先通过图像级别转换统一图像表示。然后通过特征级双路径网络减少外观差异。
 
 在PReID研究中，零件级信息可能包含更细粒度和区分性的特征（**The part-level information** may contain **more fine-grained and discriminative features** in PReID studies）。仅举几个例子，对于基于部件的卷积基线（PCB）[28]，它将特征图平均分成几个条带，旨在学习PReID任务的部件级局部表示特征。Wang等人[29]提出了一种基于条带的模型，称为多粒度网络（MGN），该模型将输入图像划分为多个条带，用于以多粒度的方式提取有区别的局部特征表示。
 
@@ -78,6 +88,11 @@ Wu等人[18]首先提供了名为SYSUMM01的跨模态PReID数据集，并针对�
 - 受[36，37]的启发，我们设计了一个新的注意力学习模块，名为位置注意力引导学习模块（PALM）。
 
   Inspired by [36, 37], we design a novel attention learning block which named Position Attention-guided Learning Module (PALM)
+
+  36. **Wang, X., Girshick, R., Gupta, A.: Non-local neural networks. In: Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (2018)** 
+  37. **Zhu, Z., Xu, M., Bai, S., Huang, T., Bai, X.: Asymmetric non-local neural networks for semantic segmentation. In: Proceedings of the IEEE International Conference on Computer Vision (2019)**
+
+  
 
 - 在PReID研究中，零件级信息可能包含更细粒度和区分性的特征。
 
