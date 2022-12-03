@@ -23,19 +23,65 @@
 1. 构建一个模型来学习特定于共享的特征表示（share specific feature representations）来解决问题。
 2. 设计一个模块来增强区分性局部特征表示。
 
-### 结论
+### 研究内容
+
+
 
 ![image-20221127202154634](C:\Users\admin\AppData\Roaming\Typora\typora-user-images\image-20221127202154634.png)
 
-1. 在这项工作中，我们提出了一个称为双路径局部信息结构（DLIS）的深度模型，该模型学习特定于共享的特征表示以解决问题。双路径网络具有两个单独的分支，其中包含可见流和红外流以提取模态共享特征。每个分支采用ResNet50[46]模型作为主干网络，提取行人的全局特征。
+在本节中，我们将介绍我们提出的红外可见PReID任务框架和方法的模型，如图1所示。所提出的模型主要由三个组件组成：
+
+**（1）双路径局部信息结构（DLIS）**：采用ResNet50网络作为主干。双路径本地信息结构（DLIS）由两个共享的ResNet50网络组成，用于提取模态共享特征。（We adopt ResNet50 network as the backbone. The Dual-path Local Information Structure (DLIS) is composed of two shared ResNet50 networks, **used to extract modality sharable features**. ）
+
+**（2）位置注意力引导学习模块（PALM）**：迫使模型提取特定位置信息并捕获模态局部特征（The Position attention-guided learning module force the model to **extract specific position information** ）
+
+**（3）交叉熵损失和异中心损失**
+
+（注：(1) Dual-path local information structure (DLIS),
+
+​			 (2) Position attention-guided learning module (PALM),
+
+​			 (3) Cross-entropy loss and Hetero-center loss. 
+
+------
+
+**<font color='red'>具体而言：</font>**
+
+1. 在这项工作中，我们提出了一个称为**双路径局部信息结构（DLIS）的深度模型**，该模型学习特定于共享的特征表示以解决问题。双路径网络具有两个单独的分支，其中包含可见流和红外流以提取模态共享特征。每个分支采用ResNet50[46]模型作为主干网络，提取行人的全局特征。
 
    ![image-20221127203327089](C:\Users\admin\AppData\Roaming\Typora\typora-user-images\image-20221127203327089.png)
 
-2. 提出了一个位置注意力引导学习模块（PALM），以增强区分性局部特征表示，并获得优异的识别性能。我们提出的注意机制可以迫使模型仅从跨模态图像中提取局部特征表示而不是全局信息，以形成最终的特征描述符。**我们将两个分支学习的特征图分成几个条带，用于本地信息学习。**
+2. 提出了一个位置注意力引导学习模块（PALM），以增强区分性局部特征表示，并获得优异的识别性能。我们提出的注意机制可以迫使模型仅从跨模态图像中提取局部特征表示而不是全局信息，以形成最终的特征描述符。**<font color='green'>我们将两个分支学习的特征图分成几个条带，用于本地信息学习。（？）</font>**
 
    （**The attention mechanism** we proposed can force the model extracting the local feature representations **rather than** the global information only from the cross-modality images to form the final feature descriptors. We **split the feature maps** learned by the two branches into several stripes **for local information learning**. ）
 
 ​	3 .为了监督网络提取鉴别特征以缩小不同模态的裕度，所提出的模型进行了**交叉熵损失函数和异中心损失函数**的联合监督。
+
+------
+
+#### Dual-Path Local Information Structure
+
+**组成：**
+
+​	**输入：**
+
+采用双路径局部信息结构来提取跨模态人物特征，包括可见路径和红外路径。
+
+​	**主干网络：**
+
+可以观察到，ResNets可以在许多视觉任务中实现竞争性能，因此，我们在每个路径中分别采用**两个ResNet50网络**作为主干，它们独立地提取特定于模态的人物特征。
+
+如图所示，ResNet50预训练模型主要由四个分辨率卷积模块组成（The res-convolution modules），分别为Stage1、Stage2、Stage3和Stage4。分辨率卷积模块在双路径结构中是独立的，用于提取特定于模态的人物特征，解决跨模态变化问题。
+
+
+
+
+
+#### Position Attention-Guided Learning Module (PALM)
+
+
+
+#### Loss Functions
 
 ## 结果与讨论
 
@@ -112,6 +158,6 @@ Ye等人[24]提出了一种用双约束顶级（DCTR）损失训练的双路径�
 
 什么是注意力机制？与局部特征表示学习有什么关系？
 
-
+注意力机制，对信息进行筛选，以权重的大小来区分信息的重要性，因此能够利用注意力机制去关注局部信息。
 
 注意力机制的作用是什么？对于学习图像中的位置关系有什么作用？文中提到了”位置注意力引导学习模块（PALM），**<font color='red'>以捕获长程依赖性</font>**并增强异质模态的辨别性局部特征表示“，这里长距离依赖

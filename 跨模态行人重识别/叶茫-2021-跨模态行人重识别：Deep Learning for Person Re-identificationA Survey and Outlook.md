@@ -84,7 +84,7 @@ https://zhuanlan.zhihu.com/p/342249413
 
 ## AGW
 
-![image-20221201154200754](C:\Users\admin\AppData\Roaming\Typora\typora-user-images\image-20221201154200754.png)
+<img src="C:\Users\admin\AppData\Roaming\Typora\typora-user-images\image-20221201154200754.png" alt="image-20221201154200754" style="zoom:200%;" />
 
 具体而言，我们的新基线是在BagTricks[122]的基础上设计的，AGW包含以下三个主要改进组件：
 
@@ -92,7 +92,7 @@ https://zhuanlan.zhihu.com/p/342249413
 
 backbone：ResNet50
 
-三个主要改进的部分：
+<font color='red'>**三个主要改进的部分：**</font>
 
 1）Non-local注意力机制的融合；
 
@@ -110,7 +110,7 @@ backbone：ResNet50
 
 其中Wz是要学习的权重矩阵，φ（·）表示非局部操作，+xi制定了剩余学习策略。有关详细信息，请参阅[246]。我们采用[246]中的默认设置来插入非本地关注块。
 
-[246] X. Wang, R. Girshick, A. Gupta, and K. He, “Non-local neural networks,” in CVPR, 2018, pp. 7794–7803.
+**[246] X. Wang, R. Girshick, A. Gupta, and K. He, “Non-local neural networks,” in CVPR, 2018, pp. 7794–7803.**
 
 
 
@@ -120,7 +120,7 @@ backbone：ResNet50
 
 ![image-20221201160004435](C:\Users\admin\AppData\Roaming\Typora\typora-user-images\image-20221201160004435.png)
 
-[247] F. Radenovi´c, G. Tolias, and O. Chum, “Fine-tuning cnn image retrieval with no human annotation,” IEEE TP AMI, vol. 41, no. 7, pp. 1655–1668, 2018.
+**[247] F. Radenovi´c, G. Tolias, and O. Chum, “Fine-tuning cnn image retrieval with no human annotation,” IEEE TP AMI, vol. 41, no. 7, pp. 1655–1668, 2018.**
 
 
 
