@@ -1,4 +1,10 @@
-# 叶茫-2021-跨模态行人重识别：Deep Learning for Person Re-identification:A Survey and Outlook
+# 叶茫-2021-（**TPAMI**）Deep Learning for Person Re-identification:A Survey and Outlook
+
+![image-20221203131310222](C:\Users\admin\AppData\Roaming\Typora\typora-user-images\image-20221203131310222.png)
+
+![image-20221203131356511](C:\Users\admin\AppData\Roaming\Typora\typora-user-images\image-20221203131356511.png)
+
+![image-20221203131420590](C:\Users\admin\AppData\Roaming\Typora\typora-user-images\image-20221203131420590.png)
 
 参考：
 

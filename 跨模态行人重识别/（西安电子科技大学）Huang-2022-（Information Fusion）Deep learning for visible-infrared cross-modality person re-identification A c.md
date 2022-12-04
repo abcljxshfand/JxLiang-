@@ -1,4 +1,4 @@
-# （西安电子科技大学）Huang-2022-（Information Fusion）Deep learning for visible-infrared cross-modality person re-identification: A comprehensive review
+# （西安电子科技大学）Huang-2022-（Information Fusion，1区）Deep learning for visible-infrared cross-modality person re-identification: A comprehensive review
 
 **（注：**在论文中，黄色标记是读论文时候的main body，绿色标记是背景、名词解释，红色标记是重点，紫色标记是相关工作，蓝色是作用、目的与意义，棕色是疑问、问题。）
 
@@ -32,13 +32,13 @@
 
 与VV ReID类似，VI ReID中的模态内变化也由视角、姿势和曝光中的人物变化引起。这进一步增加了VI ReID的难度。
 
-![image-20221129163720619](C:\Users\admin\AppData\Roaming\Typora\typora-user-images\image-20221129163720619.png)
+<img src="C:\Users\admin\AppData\Roaming\Typora\typora-user-images\image-20221129163720619.png" alt="image-20221129163720619" style="zoom:200%;" />
 
 ## 方法总结
 
 输入的可见图像或红外图像首先通过使用一些数据增强策略来增强（在训练策略中），然后被馈送到ReID网络以提取相应的人物特征。最后，匹配来自不同图像的人物特征。
 
-应该注意的是，在本文中，我们将从单模态图像中提取的特征称为单模态特征，可以进一步将其分为模态特定特征和模态共享特征。其中，特定于模态的特征是单模态图像所特有的，例如可见图像中的颜色。而模态共享特征是可见图像和红外图像中共同存在的特征。
+应该注意的是，在本文中，我们将从单模态图像中提取的特征称为**单模态特征，可以进一步将其分为模态特定特征和模态共享特征。其中，特定于模态的特征是单模态图像所特有的，例如可见图像中的颜色。而模态共享特征是可见图像和红外图像中共同存在的特征。**
 
 ![image-20221124112714662](C:\Users\admin\AppData\Roaming\Typora\typora-user-images\image-20221124112714662.png)
 
