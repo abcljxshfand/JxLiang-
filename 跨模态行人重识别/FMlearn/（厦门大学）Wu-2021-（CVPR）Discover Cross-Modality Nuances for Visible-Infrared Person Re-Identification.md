@@ -37,7 +37,7 @@
 
 ### **结论**
 
-![image-20221125213154814](C:\Users\admin\AppData\Roaming\Typora\typora-user-images\image-20221125213154814.png)
+<img src="C:\Users\admin\AppData\Roaming\Typora\typora-user-images\image-20221125213154814.png" alt="image-20221125213154814" style="zoom:200%;" />
 
 1. 提出了一种**联合模态和模式对齐网络（a joint Modality and Pattern Alignment Network，MPANet）**来发现可见红外人物Re-ID的不同模式中的跨模态细微差别，该网络引入了模态减轻模块和模式对齐模块来联合提取辨别特征。
 2. 具体地，我们首先提出了一种**模态减轻模块（The Modality Alleviation Module，MAM）**，以从提取的特征图中去除模态信息。
