@@ -683,3 +683,23 @@ Kang等人[114]进一步提出了一种通过使用生成器或插值算法来�
 **[119] M. Yang, Z. Huang, P. Hu, T. Li, J. Lv, X. Peng, Learning with twin noisy labels for visible-infrared person re-identification, in: Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition, 2022, pp.14308–14317.**
 
 不同的是，Yang等人[119]没有处理这些输入图像，而是研究了VI ReID标签级别中的一个新问题，称为双噪声标签，这可以被视为噪声标签的新范式。此外，他们还设计了一种新的方法，即双重鲁棒训练，用于学习带有噪声的注释和对应关系。
+
+
+
+## 自我思考
+
+思路与问题：
+
+1.
+
+**<font color='red'>注意力机制在提取全局特征和局部特征中是什么关系？</font>**
+
+
+
+答：
+
+注意力机制可以细分成很多种类型，硬性注意力机制，软性注意力机制，自注意力机制。不同类型的注意力机制实现的功能作用不同。
+
+因此，我们可以利用**<font color='red'>不同类型的注意力机制（non-local、se等等）</font>**提取全局特征、局部特征，又或者全局特征和局部特征相结合。
+
+![image-20221204124303358](C:\Users\admin\AppData\Roaming\Typora\typora-user-images\image-20221204124303358.png)
