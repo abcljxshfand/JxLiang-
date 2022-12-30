@@ -196,6 +196,8 @@ SYSU-MM01包含由6台相机拍摄的图像，包括2个红外相机和4个RGB�
 
 所谓协同学习，每个模态xi、xn，都有相应的映射f（xi）、g（xn），这些映射能把它们投影到同一个空间中。
 
+![image-20221121164351234](C:\Users\admin\AppData\Roaming\Typora\typora-user-images\image-20221121164351234.png)
+
 问题是，如何学习这些映射？两种思路：**<font color='red'>相似度模型和结构化模型</font>**。度量学习很好理解，量化距离，拉近距离。结构化呢？
 
 ![image-20221122172737401](C:\Users\admin\AppData\Roaming\Typora\typora-user-images\image-20221122172737401.png)
@@ -238,4 +240,4 @@ SYSU-MM01包含由6台相机拍摄的图像，包括2个红外相机和4个RGB�
 
 对于discriminative features for matching，关键就是match。跨模态行人重识别任务种，因为模态间的误差会极大地影响任务的实现。因此，我们需要消除模态间的差异。
 
-在the domain-specific network提取不同域的共享特征后，我们要清楚的是，这些共享特征，是否work呢？因为存在模态差异，所以不一定有效。所以共享网络（the shared network）通过共享权值的方式去拟合模态间的差异，投影到同一个空间。
+在the domain-specific network提取不同域的共享特征后**（浅层网络提取的一般是底层信息，如纹理、边缘等等）**，我们要清楚的是，这些共享特征，是否work呢？**（一般而言，两种模态中共享的特征往往是轮廓、线条。）**因为存在模态差异，所以不一定有效。所以共享网络（the shared network）通过共享权值的方式去拟合模态间的差异，投影到同一个空间。

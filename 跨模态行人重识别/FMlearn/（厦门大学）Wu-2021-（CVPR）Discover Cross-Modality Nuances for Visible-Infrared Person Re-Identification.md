@@ -44,7 +44,33 @@
 3. 然后，我们设计了一个**模式对齐模块（the Pattern Alignment Module，PAM）**，它为一个人的不同模式生成多个模式图，以发现细微差别。
 4. 最后，我们引入了**一种互均值学习方式（a mutual mean learning fashion ）**来缓解模态差异，并提出了一种**中心聚类损失（ the cross-entropy loss）**来指导**身份学习和细微差别发现（identity learning and nuances discovering）**。在公共SYSU-MM01和RegDB数据集上的大量实验表明MPANet优于现有技术。
 
+
+
+### 相关工作
+
+
+
+
+
+## 方法
+
+
+
 ## 结果与讨论
+
+### 数据集介绍
+
+**SYSU-MM01**
+
+SYSU-MM01包含由6台摄像机拍摄的图像，包括**2台红外摄像机和4台RGB摄像机**。
+
+在SYSU-MM01数据集中有491个有效的ID。我们有一个固定的分割，使用296个身份进行训练，99个身份进行验证，96个身份进行测试。在训练阶段，训练集中296个身份在所有相机中的所有图像都可以被应用。
+**<font color='red'>在测试阶段，来自RGB相机的样本用于gallery集，来自IR相机的样本用于probe集。</font>**
+我们设计了两种模式，**全搜索模式和室内搜索模式**。在全搜索模式下，RGB相机1、2、4和5用于gallery集，红外相机3和6用于probe集。对于室内搜索模式，RGB相机1和2（不包括室外相机4和5）用于gallery集，红外相机3和6用于probe集。
+对于这两种模式，我们采用单次拍摄（single-shot）和多次拍摄(multi-shot)的设置。对于RGB相机下的每一个身份，我们随机选择该身份的一/十张图像组成单张/多张设置的gallery集。对于probe集，所有的图像都被使用。给定一个probe图像，通过计算probe图像和gallery图像之间的相似性来进行匹配。请注意，匹配是在不同位置的相机之间进行的（位置如表2所示）。摄像机2和摄像机3在同一地点，所以摄像机3的probe图像跳过了摄像机2的gallery图像。计算完相似度后，我们可以根据相似度的降序得到一个排名表。
+为了表示性能，我们使用累积匹配特性（CMC）[32]和平均精度（mAP）。请注意，对于多镜头设置下的CMC，只取同一人的所有gallery图像中的最大相似度来计算排名列表。我们用随机分割的gallery集和probe集重复上述评估10次，最后计算出平均性能。
+
+![image-20221220202414423](C:\Users\admin\AppData\Roaming\Typora\typora-user-images\image-20221220202414423.png)
 
 ![image-20221125215455615](C:\Users\admin\AppData\Roaming\Typora\typora-user-images\image-20221125215455615.png)
 
@@ -53,6 +79,10 @@
 ![image-20221125215517414](C:\Users\admin\AppData\Roaming\Typora\typora-user-images\image-20221125215517414.png)
 
 ## 文章好在哪里
+
+### 
+
+
 
 **主要贡献：**
 
@@ -64,17 +94,41 @@
 
 ### 思路与问题
 
+1.
+
 本文中提到**<font color='red'>”现有的工作主要集中于通过对齐不同模态的特征分布来缓解模态差异（Existing works mainly focus on alleviating the modality discrepancy by aligning the distributions of features from different modalities）“</font>**如何理解？
 
 
+
+2.
 
 本文的创新点是怎么来的？
 
 
 
+3.
+
 如何理解本文的标题：**<font color='red'>Discover Cross-Modality Nuances for Visible-Infrared Person Re-Identification</font>**中的细微差别（the nuances）
 
-然而，诸如眼镜、鞋子和衣服长度等细微但有区别的信息尚未被充分发掘，尤其是在红外模式中。在没有发现细微差别的情况下，仅使用模态对齐来匹配不同模态的行人是具有挑战性的，这不可避免地降低了特征的显著性。
+**答：**
+
+可见光图像和红外图像相比而言，可见光图像具有更多样的鉴别性特征，如颜色信息、纹理信息等等，这些特征是红外图像所没有的，这就导致了不同身份行人的红外图像比较难以分辨，而可见光图像易于区分。同时，同一行人两种模态的图像是很大的差异的。
+
+目前的工作侧重点是放在通过模态对齐或者像素对齐来减缓模态间的差异。尽管取得了不错的成果，但是在红外图像上仍存在许多有效信息尚待挖掘，因此现有工作在发掘跨模态鉴别性的特征这一方面仍然有限。
+
+在 cross-modality person Re-ID 中，不同图像对中的细微差别以各种模式出现，例如 T 恤和裤子的长度、鞋子的类型以及是否戴眼镜。如果没有很好地发现这些信息，红外特征的可辨别性将比可见特征差。
+
+
+
+4.
+
+是在哪里挖掘细微差异？如何挖掘细微差异？挖掘了细微差异后怎么用？
+
+
+
+
+
+
 
 ### 句式积累
 
